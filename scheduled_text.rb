@@ -9,7 +9,6 @@ require 'twilio-ruby'
 # Once that is sorted, move to hosted app for scheduled text capability
 
 # NS: Blocked based on Twillio update - pick up here next session https://www.twilio.com/docs/messaging/compliance/toll-free/console-onboarding#submit-information-for-verification
-# NS: Port bash_profile for shortcuts
 
 # future optimization: Move to hosted app for scheduled capability
 # future optimization: normalize time
