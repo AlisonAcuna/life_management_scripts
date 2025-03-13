@@ -1,10 +1,21 @@
 #!/usr/bin/env ruby
 
-# requires
+
+require 'rubygems'
+require 'twilio-ruby'
 
 # includes
 
-# NS: build Rails app
+# NS: Move to branch
+# NS: Port bash_profile for shortcuts
+# NS: validate base text send capability - investigate verifying number
+# For US customers, Free Trial accounts with Toll Free phone numbers
+# are required to complete Toll-Free Verification in order to send SMS.
+# Once approved, these messages can only be sent to a verified phone number
+# until you upgrade to a paid Twilio account.
+# You can start the Toll Free message verification process by following our
+# https://www.twilio.com/docs/messaging/compliance/toll-free/console-onboarding
+# https://help.twilio.com/articles/11853148778523-Trial-Limits-and-US-Toll-Free-Number-Restrictions
 
 def send_schedule_text(msg, from, to_array, time)
   # send msg to numbers at time
@@ -20,3 +31,19 @@ def send_schedule_text(msg, from, to_array, time)
   # future optimization: normalize time
   # future optimization: Directory so can enter names rather than numbers
 end
+
+def send_text()
+  account_sid = ''
+  auth_token = ''
+  @client = Twilio::REST::Client.new(account_sid, auth_token)
+
+  message = @client.messages.create(
+    body: 'Hello from Twilio - test 1',
+    from:
+    to:
+  )
+
+  puts message.sid
+end
+
+send_text()
