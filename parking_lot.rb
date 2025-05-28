@@ -76,16 +76,3 @@ class Bus < Vehicle
     @spots = 5
   end
 end
-
-
-def main
-  pl = ParkingLot.new(2)
-  moto = Motorcycle.new
-  bus = Bus.new
-  moto_recommended_spot = pl.check_space(moto)
-  bus_recommended_spot = pl.check_space(bus)
-  pl.park(bus_recommended_spot, true)
-  pl.lot_status
-end
-
-main
