@@ -5,19 +5,14 @@ def skip_animals(animals, skip)
   animals.each_with_index.map { |animal, index| "#{index}:#{animal}" }.drop(skip)
 end
 
-# your code here
-letter_to_number = ('a'..'z').zip(1..26).to_h
-secret_messages.map do |string|
-    ary_of_words = string.scan(/[ ]+|[^ ]+/)
-    ary_of_words.map do |word|
-        if word.empty?
-            word
-        else
-            word.chars.map do |char|
-                encrypt = letter_to_number[char] + 13 unless letter_to_number[char].nil?
-                encrypt = encrypt - 26 if !letter_to_number[char].nil? && encrypt > 26
-                letter_to_number.key(encrypt)
-            end.join
+# @param {Integer[]} nums
+# @param {Integer} target
+# @return {Integer[]}
+def two_sum(nums, target)
+    nums.each_with_index do |x_num, x_i|
+        nums.each_with_index do |y_num, y_i|
+            next if x_i == y_i
+            return [x_i, y_i] if x_num + y_num == target
         end
-    end.join
+    end
 end
