@@ -37,3 +37,13 @@ def length_of_substring(s, substrings)
 
     length_of_substring(s, substrings)
 end
+
+
+
+def find_median_sorted_arrays(nums1, nums2)
+    sorted_nums = (nums1 + nums2).sort
+    nums_count = sorted_nums.count
+    median_index = (nums_count)/2
+    return sorted_nums[median_index] if nums_count.odd?
+    (sorted_nums[(median_index - 1)].to_f + sorted_nums[median_index])/2
+end
